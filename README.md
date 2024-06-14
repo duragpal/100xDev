@@ -1,2 +1,2 @@
-# 100xDev
-MERN Stack.
+# MERN STACK
+
