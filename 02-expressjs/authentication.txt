@@ -1,0 +1,19 @@
+Easiest way ==> username and pass auth
+
+=======================
+1.Hashing
+2. Encryption
+3. JWT ( JavaScript web tokens)
+4. Local Storage
+
+Hasing = 1 way conversion
+Encryption = 2 way... can be reversed (requires a key to encrypt and decrypt)
+
+3) JSON WEB TOKENS
+works for only JSON inputs
+creates a token for input.  whoever have token and can be reconvert it to original input.
+
+can be original converted using website...
+jwt.io
+
+but, verification can only be done by original servers.
