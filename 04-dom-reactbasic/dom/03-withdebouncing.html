@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom Intro</title>
+  </head>
+  <script>
+    let timeout;
+    function debouncePopulateDiv() {
+      //delay the call to popluateDiv until this is not called
+      //called atleast once
+      clearTimeout(timeout);
+      const timeout = setTimeout(() => {
+        PopulateDiv();
+      }, 100);
+      // old clock gets deleted and new starts
+
+      //cleartimeout for clear the clock
+    }
+
+    async function PopulateDiv() {
+      // can be done using axios
+      const firstNum = document.getElementById("firstNo").value;
+      const secondNum = document.getElementById("secondNo").value;
+      const element = document.getElementById("finalSum");
+      const response = await fetch(
+        `https://sum-server.100xdevs.com/sum?a=${firstNum}&b=${secondNum}`
+      );
+      element.innerHTML = await response.text();
+      //   element.innerHTML = parseInt(firstNum) + parseInt(secondNum);
+    }
+  </script>
+  <body>
+    <input
+      oninput="debouncePopulateDiv()"
+      id="firstNo"
+      type="text"
+      placeholder="first number"
+    />
+    <br />
+    <br />
+    <input
+      oninput="debouncePopulateDiv()"
+      id="secondNo"
+      type="text"
+      placeholder="second number"
+    />
+    <br />
+    <br />
+    <!-- <button onclick="PopulateDiv()">Calculate Sum</button> -->
+    <div id="finalSum"></div>
+  </body>
+</html>
