@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom Intro</title>
+  </head>
+  <script>
+    function PopulateDiv() {
+      //another way : document.querySelector("#finalSum")
+      // ("div") => gives a div
+      //querySelectorAll ("div") = gives array of div
+      const firstNum = document.getElementById("firstNo").value;
+      const secondNum = document.getElementById("secondNo").value; //it takes input
+      const element = document.getElementById("finalSum");
+      element.innerHTML = parseInt(firstNum) + parseInt(secondNum);
+    }
+  </script>
+  <body>
+    <input id="firstNo" type="text" placeholder="first number" /> <br />
+    <br />
+    <input id="secondNo" type="text" placeholder="second number" /> <br />
+    <br />
+    <button onclick="PopulateDiv()">Calculate Sum</button>
+    <div id="finalSum"></div>
+  </body>
+</html>
