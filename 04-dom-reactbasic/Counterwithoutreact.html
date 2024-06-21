@@ -1,0 +1,13 @@
+<html>
+  <script>
+    function Counter() {
+      const value = document.getElementById("btn").innerHTML;
+      currentCounter = value.split(" ")[1];
+      newCounter = parseInt(currentCounter) + 1;
+      document.getElementById("btn").innerHTML = "Counter " + newCounter;
+    }
+  </script>
+  <body>
+    <button id="btn" onclick="Counter()">Counter 0</button>
+  </body>
+</html>
