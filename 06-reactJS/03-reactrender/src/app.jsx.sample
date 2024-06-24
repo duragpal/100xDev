@@ -1,0 +1,26 @@
+import { useState } from "react";
+import "./App.css";
+
+function App() {
+  const [title, setTitle] = useState("Hi there");
+  function updateTitle() {
+    setTitle(Math.random().toString());
+  }
+
+  return (
+    <div>
+      <button onClick={updateTitle}>Update the Title</button>
+      <Header title={title} />
+      <Header title={"Hi there"} />
+    </div>
+  );
+}
+
+function Header(props) {
+  return (
+    <div>
+      <h1>{props.title}</h1>
+    </div>
+  );
+}
+export default App;
